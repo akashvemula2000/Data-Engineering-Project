@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: Harry_Potter
+    database: movies
+    schema: harry_potter
+    tables:
+      - name: MoviesList
+        description: List of Movies in the Harrypotter Series
+      - name: Characters
+        description: List of Harry Potter Charecters
+      - name: Spells
+        description: List of Spells used in the Movies
+      - name: Chapters
+        description: List Chapters in each movie
+      - name: Dialogue
+        description: All the Dialogues in the movie
+      - name: places
+        description: All the Locations visited by characters.
+
+ 
