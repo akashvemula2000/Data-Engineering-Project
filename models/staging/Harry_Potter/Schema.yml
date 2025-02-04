@@ -1,0 +1,83 @@
+version: 2
+
+models:
+
+  - name: stg_Harry_Potter__MoviesList
+    description: "Staging table for Harry Potter movies List"
+    columns:
+      - name: movie_id
+        description: "Primary key for Movies table"
+        tests:
+          - unique
+          - not_null  
+
+  - name: stg_Harry_Potter__Chapters
+    description: "Staging table for chapters in Harry Potter movies"
+    columns:
+      - name: chapter_id
+        description: "Primary key for Chapters table"
+        tests:
+          - unique
+          - not_null
+      - name: movie_id
+        description: "Foreign key linking to Movies table"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Harry_Potter__MoviesList')
+              field: movie_id
+
+
+  - name: stg_Harry_Potter__places
+    description: "Staging table for places in Harry Potter movies"
+    columns:
+      - name: place_id
+        description: "Primary key for Places table"
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_Harry_Potter__Characters
+    description: "Staging table for Harry Potter characters"
+    columns:
+      - name: character_id
+        description: "Primary key for Characters table"
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_Harry_Potter__Dialogue
+    description: "Dialogue spoken by characters in different places"
+    columns:
+      - name: dialogue_id
+        description: "Primary key for Dialogue table"
+        tests:
+          - unique
+          - not_null
+      - name: character_id
+        description: "Foreign key linking to Characters table"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Harry_Potter__Characters')
+              field: character_id
+      - name: place_id
+        description: "Foreign key linking to Places table"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_Harry_Potter__places')
+              field: place_id
+
+  - name: stg_Harry_Potter__Spells
+    description: "Staging table for spells in Harry Potter movies"
+    columns:
+      - name: spell_id
+        description: "Primary key for Spells table"
+        tests:
+          - unique
+          - not_null
+
+

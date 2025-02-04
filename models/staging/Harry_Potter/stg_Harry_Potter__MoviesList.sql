@@ -13,8 +13,8 @@ renamed as (
         movie_title,
         release_year,
         runtime,
-        budget,
-        box_office
+        replace(replace(budget,'$',''), ',','')::INTEGER as budget,
+        replace(replace(box_office,'$',''), ',','')::INTEGER as box_office,
 
     from source
 
