@@ -31,4 +31,4 @@ on upper(d.Dialogue) like concat('%',upper(s.incantation),'%')
 inner join chars c
 on c.character_id = d.character_id
 group by character_name
-order by count(dialogue) desc;
+order by count(dialogue) desc
