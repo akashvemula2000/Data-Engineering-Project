@@ -34,6 +34,7 @@ This project builds a **data pipeline** to process and analyze Harry Potter movi
 │  └─ settings.json
 ├─ README.md
 ├─ Snowflake_Code.sql
+├─ Aiflow_Code.sql
 ├─ analyses
 │  └─ .gitkeep
 ├─ dbt_project.yml
