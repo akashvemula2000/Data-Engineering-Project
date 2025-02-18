@@ -10,7 +10,7 @@ This project builds a **data pipeline** to process and analyze Harry Potter movi
 
 ## **📌 Steps in the Project**  
 1. **Data Ingestion**: Uploaded raw CSV files to **AWS S3**.  
-2. **Loading to Snowflake**: Used **COPY INTO** to load data from **S3 to Snowflake**.  
+2. **Loading to Snowflake**: Used **s3 External Stage** in Snowflake to load data from **S3**.  
 3. **dbt Transformation**:  
    - Created **staging, intermediate, and marts models** in **dbt**.  
    - Implemented **data tests** for quality checks.  
