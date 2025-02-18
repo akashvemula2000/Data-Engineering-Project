@@ -29,37 +29,49 @@ This project builds a **data pipeline** to process and analyze Harry Potter movi
 
 ## **📁 Repository Structure**  
 ```
-├─ .gitignore
-├─ .vscode
-│  └─ settings.json
-├─ README.md
-├─ Snowflake_Code.sql
-├─ Aiflow_Code.sql
-├─ analyses
-│  └─ .gitkeep
-├─ dbt_project.yml
-├─ macros
-│  └─ .gitkeep
-├─ models
-│  ├─ Sources.yml
-│  ├─ marts
-│  │  ├─ Char_Dialogue_Count.sql
-│  │  ├─ Char_place_with_most_dialogue.sql
-│  │  ├─ Char_spell_count.sql
-│  │  └─ Movies_ROI.sql
-│  └─ staging
-│     ├─ Harry_Potter
-│     │  ├─ stg_Harry_Potter__Chapters.sql
-│     │  ├─ stg_Harry_Potter__Characters.sql
-│     │  ├─ stg_Harry_Potter__Dialogue.sql
-│     │  ├─ stg_Harry_Potter__MoviesList.sql
-│     │  ├─ stg_Harry_Potter__Spells.sql
-│     │  └─ stg_Harry_Potter__places.sql
-│     └─ Schema.yml
-├─ seeds
-│  └─ .gitkeep
-├─ snapshots
-│  └─ .gitkeep
-└─ tests
-   └─ .gitkeep
+📦 Data-Engineering-Project
+├── README.md
+├── dbt_project.yml
+├── .gitignore
+├── dags/
+│   └── Airflow_code.py  #Airflow DAG (Trigger dbt jobs)
+├── sql/
+│   └── Snowflake_Code.sql #Standalone Snowflake SQL file
+├── models/
+│   ├── Sources.yml
+│   ├── marts/
+│   │   ├── Char_Dialogue_Count.sql
+│   │   ├── Char_place_with_most_dialogue.sql
+│   │   ├── Char_spell_count.sql
+│   │   └── Movies_ROI.sql
+│   ├── staging/
+│   │   ├── Schema.yml
+│   │   ├── Harry_Potter/
+│   │   │   ├── stg_Harry_Potter__Chapters.sql
+│   │   │   ├── stg_Harry_Potter__Characters.sql
+│   │   │   ├── stg_Harry_Potter__Dialogue.sql
+│   │   │   ├── stg_Harry_Potter__MoviesList.sql
+│   │   │   ├── stg_Harry_Potter__Spells.sql
+│   │   │   └── stg_Harry_Potter__places.sql
+├── tests/
+│   └── .gitkeep
+├── docs/
+│   └── dbt_lineage.png
+├── macros/
+│   └── .gitkeep
+├── snapshots/
+│   └── .gitkeep
+├── seeds/
+│   └── .gitkeep
+├── analyses/
+│   └── .gitkeep
+├── .vscode/
+│   └── settings.json
+
 ```
+## 📌 dbt Lineage Graph
+
+Below is the **dbt model lineage** for this project:
+
+![DBT Lineage](dbt_lineage.png)
+
