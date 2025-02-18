@@ -42,3 +42,7 @@ models:
     # Applies to all files under models/example/
     staging:
       +materialized: table
+    sql:
+      +enabled: false  # Exclude Snowflake SQL files
+    dags:
+      +enabled: false  # Exclude Airflow DAGs
