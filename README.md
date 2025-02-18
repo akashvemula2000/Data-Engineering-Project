@@ -1,15 +1,62 @@
-Welcome to your new dbt project!
+# Harry Potter Data Pipeline (AWS S3 | Snowflake | dbt | Airflow)  
+🚀 **End-to-End Data Pipeline using dbt & Airflow**  
 
-### Using the starter project
+## **Project Overview**  
+This project builds a **data pipeline** to process and analyze Harry Potter movie datasets using:  
+- **AWS S3** for raw data storage  
+- **Snowflake** for structured data warehousing  
+- **dbt** for data transformations and testing  
+- **Airflow** for job automation and orchestration  
 
-Try running the following commands:
-- dbt run
-- dbt test
+## **📌 Steps in the Project**  
+1. **Data Ingestion**: Uploaded raw CSV files to **AWS S3**.  
+2. **Loading to Snowflake**: Used **COPY INTO** to load data from **S3 to Snowflake**.  
+3. **dbt Transformation**:  
+   - Created **staging, intermediate, and marts models** in **dbt**.  
+   - Implemented **data tests** for quality checks.  
+4. **Job Automation**: Created a **dbt Cloud Job** to run the transformations.  
+5. **Orchestration with Airflow**:  
+   - Integrated **dbt Cloud API** with Airflow.  
+   - Triggered **dbt jobs from an Airflow DAG** to automate model execution.  
 
+## **📊 Technologies Used**  
+- 🛠 **AWS S3, Snowflake, dbt, Airflow, SQL, Python**  
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## **💡 Key Learnings**  
+- Building scalable **data pipelines** using **cloud services & dbt**  
+- Automating **ETL workflows** with **Airflow & dbt Cloud API**  
+- Writing **efficient SQL transformations** and **data tests** in dbt  
+
+## **📁 Repository Structure**  
+├─ .gitignore
+├─ .vscode
+│  └─ settings.json
+├─ README.md
+├─ Snowflake_Code.sql
+├─ analyses
+│  └─ .gitkeep
+├─ dbt_project.yml
+├─ macros
+│  └─ .gitkeep
+├─ models
+│  ├─ Sources.yml
+│  ├─ marts
+│  │  ├─ Char_Dialogue_Count.sql
+│  │  ├─ Char_place_with_most_dialogue.sql
+│  │  ├─ Char_spell_count.sql
+│  │  └─ Movies_ROI.sql
+│  └─ staging
+│     ├─ Harry_Potter
+│     │  ├─ stg_Harry_Potter__Chapters.sql
+│     │  ├─ stg_Harry_Potter__Characters.sql
+│     │  ├─ stg_Harry_Potter__Dialogue.sql
+│     │  ├─ stg_Harry_Potter__MoviesList.sql
+│     │  ├─ stg_Harry_Potter__Spells.sql
+│     │  └─ stg_Harry_Potter__places.sql
+│     └─ Schema.yml
+├─ seeds
+│  └─ .gitkeep
+├─ snapshots
+│  └─ .gitkeep
+└─ tests
+   └─ .gitkeep
