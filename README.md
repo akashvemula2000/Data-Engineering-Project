@@ -28,6 +28,7 @@ This project builds a **data pipeline** to process and analyze Harry Potter movi
 - Writing **efficient SQL transformations** and **data tests** in dbt  
 
 ## **📁 Repository Structure**  
+```
 ├─ .gitignore
 ├─ .vscode
 │  └─ settings.json
@@ -60,3 +61,4 @@ This project builds a **data pipeline** to process and analyze Harry Potter movi
 │  └─ .gitkeep
 └─ tests
    └─ .gitkeep
+```
