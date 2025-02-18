@@ -69,3 +69,9 @@ This project builds a **data pipeline** to process and analyze Harry Potter movi
 │   └── settings.json
 
 ```
+## 📌 dbt Lineage Graph
+
+Below is the **dbt model lineage** for this project:
+
+![DBT Lineage](dbt_lineage.png)
+
